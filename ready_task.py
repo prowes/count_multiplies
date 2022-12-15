@@ -13,6 +13,8 @@ def get_multiplied_lines(input_file_content):
         valid_line = (len(digits_from_line) == 3)  # skip the line if it is not like "5 8 31"
         if valid_line:
             multiplied_lines.update(count_multiplies(digits_from_line))
+        else:
+            print(f"{digits_from_line} is not valid, skipping")
     return multiplied_lines
 
 
@@ -37,7 +39,7 @@ def remove_lens(sorted_lines_with_lens):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("2 arguments for input and should be there, try again")
+        print("2 arguments for input output files should be there, try again")
         exit()
     input_file = sys.argv[1]
     output_file = sys.argv[2]
